@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="七年级英语复习知识库 - 包含单词表、语法讲解、练习题等完整学习资料">
+  <title>英语复习知识库 - 七年级下册</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/vue.css">
+  <style>
+    :root {
+      --theme-color: #15803d;
+      --theme-color-light: #22c55e;
+    }
+    .sidebar-nav > ul > li > a {
+      font-weight: bold;
+      color: #15803d;
+    }
+    .markdown-section h1 {
+      color: #15803d;
+      border-bottom: 3px solid #22c55e;
+      padding-bottom: 10px;
+    }
+    .markdown-section h2 {
+      color: #166534;
+      border-bottom: 2px solid #bbf7d0;
+      padding-bottom: 8px;
+    }
+    .search input {
+      border-radius: 20px;
+    }
+    .cover-show {
+      background: linear-gradient(135deg, #15803d 0%, #22c55e 100%);
+    }
+    .app-name-link {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #15803d !important;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">加载中...</div>
+  <script>
+    window.$docsify = {
+      name: '📚 英语复习知识库',
+      repo: '',
+      loadSidebar: true,
+      subMaxLevel: 3,
+      auto2top: true,
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: '🔍 搜索...',
+        noData: '😢 没有找到结果',
+        depth: 3,
+        hideOtherSidebarContent: false
+      },
+      pagination: {
+        previousText: '← 上一页',
+        nextText: '下一页 →',
+        crossChapter: true
+      },
+      copyCode: {
+        buttonText: '📋 复制',
+        errorText: '复制失败',
+        successText: '已复制!'
+      },
+      toc: {
+        tocMaxLevel: 3,
+        target: 'h2, h3'
+      },
+      plugins: [
+        function(hook, vm) {
+          hook.beforeEach(function(html) {
+            var url = vm.route.file;
+            var editUrl = 'https://github.com/docsifyjs/docsify/edit/master/docs/' + url;
+            var footer = ['<hr/>', '<footer>', '<span>最后更新: ' + new Date().toLocaleDateString('zh-CN') + '</span>', '<br/>', '<span>🌐 英语复习知识库 - 七年级下册</span>', '</footer>'].join('');
+            return html + footer;
+          });
+        }
+      ]
+    };
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-toc/src/toc.js"></script>
+</body>
+</html>
